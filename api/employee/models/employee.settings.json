@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "name": "employee",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "rg": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 15
+    },
+    "cpf": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 15
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "birthday": {
+      "type": "date"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "celPhone": {
+      "type": "string"
+    },
+    "telPhone": {
+      "type": "string"
+    },
+    "position": {
+      "model": "position"
+    },
+    "address": {
+      "via": "employee",
+      "model": "address"
+    },
+    "payslip": {
+      "via": "employee",
+      "model": "payslip"
+    },
+    "register_hour": {
+      "via": "employee",
+      "model": "register-hours"
+    }
+  }
+}

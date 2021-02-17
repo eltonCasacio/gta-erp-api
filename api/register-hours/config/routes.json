@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/register-hours",
+      "handler": "register-hours.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/register-hours/count",
+      "handler": "register-hours.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/register-hours/:id",
+      "handler": "register-hours.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/register-hours",
+      "handler": "register-hours.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/register-hours/:id",
+      "handler": "register-hours.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/register-hours/:id",
+      "handler": "register-hours.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

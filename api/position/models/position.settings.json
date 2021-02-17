@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "positions",
+  "info": {
+    "name": "position",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

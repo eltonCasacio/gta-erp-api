@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payslips",
+  "info": {
+    "name": "payslip"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "paymentType": {
+      "type": "enumeration",
+      "enum": [
+        "SALARIO",
+        "ADIANTAMENTO",
+        "FERIAS",
+        "DECIMO_TERCEIRO_SALARIO"
+      ]
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "paymentDate": {
+      "type": "date",
+      "required": true
+    },
+    "visualized": {
+      "type": "boolean",
+      "default": false,
+      "private": true
+    },
+    "urlFile": {
+      "type": "string",
+      "required": true
+    },
+    "employee": {
+      "model": "employee",
+      "via": "payslip"
+    }
+  }
+}
