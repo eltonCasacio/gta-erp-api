@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/27/2021 12:26:05 AM"
+    "x-generation-date": "02/27/2021 11:48:39 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4807,7 +4807,8 @@
               "Nascimento",
               "Admissao",
               "RG",
-              "CPF"
+              "CPF",
+              "email"
             ],
             "properties": {
               "id": {
@@ -4850,6 +4851,9 @@
                 }
               },
               "endereco": {
+                "type": "string"
+              },
+              "email": {
                 "type": "string"
               },
               "published_at": {
@@ -4955,7 +4959,8 @@
           "Nascimento",
           "Admissao",
           "RG",
-          "CPF"
+          "CPF",
+          "email"
         ],
         "properties": {
           "id": {
@@ -5144,6 +5149,9 @@
               }
             }
           },
+          "email": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -5156,7 +5164,8 @@
           "Nascimento",
           "Admissao",
           "RG",
-          "CPF"
+          "CPF",
+          "email"
         ],
         "properties": {
           "Nome": {
@@ -5203,6 +5212,9 @@
             }
           },
           "endereco": {
+            "type": "string"
+          },
+          "email": {
             "type": "string"
           },
           "published_at": {
@@ -5324,7 +5336,8 @@
               "Nascimento",
               "Admissao",
               "RG",
-              "CPF"
+              "CPF",
+              "email"
             ],
             "properties": {
               "id": {
@@ -5367,6 +5380,9 @@
                 }
               },
               "endereco": {
+                "type": "string"
+              },
+              "email": {
                 "type": "string"
               },
               "published_at": {
@@ -5457,7 +5473,8 @@
                 "Nascimento",
                 "Admissao",
                 "RG",
-                "CPF"
+                "CPF",
+                "email"
               ],
               "properties": {
                 "id": {
@@ -5500,6 +5517,9 @@
                   }
                 },
                 "endereco": {
+                  "type": "string"
+                },
+                "email": {
                   "type": "string"
                 },
                 "published_at": {

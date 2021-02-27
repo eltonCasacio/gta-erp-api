@@ -32,8 +32,8 @@
       "required": true
     },
     "funcionario": {
-      "model": "employee",
-      "via": "endereco"
+      "via": "endereco",
+      "model": "employee"
     }
   }
 }

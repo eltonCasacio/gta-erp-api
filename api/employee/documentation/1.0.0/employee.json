@@ -592,7 +592,8 @@
           "Nascimento",
           "Admissao",
           "RG",
-          "CPF"
+          "CPF",
+          "email"
         ],
         "properties": {
           "id": {
@@ -781,6 +782,9 @@
               }
             }
           },
+          "email": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -793,7 +797,8 @@
           "Nascimento",
           "Admissao",
           "RG",
-          "CPF"
+          "CPF",
+          "email"
         ],
         "properties": {
           "Nome": {
@@ -840,6 +845,9 @@
             }
           },
           "endereco": {
+            "type": "string"
+          },
+          "email": {
             "type": "string"
           },
           "published_at": {

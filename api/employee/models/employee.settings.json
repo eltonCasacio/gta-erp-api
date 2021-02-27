@@ -61,8 +61,13 @@
       "collection": "apontamento"
     },
     "endereco": {
-      "via": "funcionario",
-      "model": "address"
+      "model": "address",
+      "via": "funcionario"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
     }
   }
 }
