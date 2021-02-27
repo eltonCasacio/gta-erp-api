@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "positions",
   "info": {
-    "name": "position",
+    "name": "Funcoes",
     "description": ""
   },
   "options": {
@@ -17,7 +17,11 @@
     },
     "description": {
       "type": "text",
-      "required": true
+      "required": false
+    },
+    "funcionarios": {
+      "via": "funcoe",
+      "collection": "employee"
     }
   }
 }

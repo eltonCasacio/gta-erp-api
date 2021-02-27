@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "payslips",
   "info": {
-    "name": "payslip"
+    "name": "Holerites",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -36,13 +37,19 @@
       "default": false,
       "private": true
     },
-    "urlFile": {
-      "type": "string",
+    "holerite": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "plugin": "upload",
       "required": true
     },
-    "employee": {
-      "model": "employee",
-      "via": "payslip"
+    "funcionario": {
+      "via": "holerites",
+      "model": "employee"
     }
   }
 }

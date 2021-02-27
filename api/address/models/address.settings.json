@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "addresses",
   "info": {
-    "name": "address"
+    "name": "Endereco",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,25 +11,30 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "street": {
+    "Rua": {
       "type": "string",
       "required": true
     },
-    "numberHouse": {
+    "Numero": {
       "type": "string"
     },
-    "neighborhood": {
+    "Bairro": {
       "type": "string"
     },
-    "zipcode": {
+    "CEP": {
       "type": "string"
     },
-    "city": {
+    "Cidade": {
       "type": "string"
     },
-    "employee": {
-      "model": "employee",
-      "via": "address"
+    "UF": {
+      "type": "string",
+      "required": true
+    },
+    "funcionarios": {
+      "collection": "employee",
+      "via": "enderecos",
+      "dominant": true
     }
   }
 }

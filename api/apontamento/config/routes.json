@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/register-hours",
-      "handler": "register-hours.find",
+      "path": "/apontamentos",
+      "handler": "apontamento.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/register-hours/count",
-      "handler": "register-hours.count",
+      "path": "/apontamentos/count",
+      "handler": "apontamento.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/register-hours/:id",
-      "handler": "register-hours.findOne",
+      "path": "/apontamentos/:id",
+      "handler": "apontamento.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/register-hours",
-      "handler": "register-hours.create",
+      "path": "/apontamentos",
+      "handler": "apontamento.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/register-hours/:id",
-      "handler": "register-hours.update",
+      "path": "/apontamentos/:id",
+      "handler": "apontamento.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/register-hours/:id",
-      "handler": "register-hours.delete",
+      "path": "/apontamentos/:id",
+      "handler": "apontamento.delete",
       "config": {
         "policies": []
       }

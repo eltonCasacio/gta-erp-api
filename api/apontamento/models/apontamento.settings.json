@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apontamentos",
+  "info": {
+    "name": "apontamento",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "entrada": {
+      "type": "time",
+      "required": false
+    },
+    "saida": {
+      "type": "time",
+      "required": false
+    }
+  }
+}

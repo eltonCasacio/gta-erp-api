@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "employees",
   "info": {
-    "name": "employee",
+    "name": "Funcionarios",
     "description": ""
   },
   "options": {
@@ -11,48 +11,58 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "rg": {
+    "Nome": {
       "type": "string",
       "required": true,
-      "unique": true,
-      "maxLength": 15
+      "unique": false
     },
-    "cpf": {
-      "type": "string",
-      "required": true,
-      "unique": true,
-      "maxLength": 15
-    },
-    "name": {
-      "type": "string",
+    "Nascimento": {
+      "type": "date",
       "required": true
     },
-    "birthday": {
-      "type": "date"
+    "Admissao": {
+      "type": "date",
+      "required": true
     },
-    "startDate": {
-      "type": "date"
+    "funcoe": {
+      "model": "position",
+      "via": "funcionarios"
     },
-    "celPhone": {
-      "type": "string"
+    "holerites": {
+      "collection": "payslip",
+      "via": "funcionario"
     },
-    "telPhone": {
-      "type": "string"
+    "RG": {
+      "type": "string",
+      "maxLength": 10,
+      "regex": "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]",
+      "required": true,
+      "unique": true
     },
-    "position": {
-      "model": "position"
+    "CPF": {
+      "type": "string",
+      "regex": "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]",
+      "maxLength": 11,
+      "minLength": 11,
+      "required": true,
+      "unique": true
     },
-    "address": {
-      "via": "employee",
-      "model": "address"
+    "Celular": {
+      "type": "string",
+      "regex": "[0-9]",
+      "maxLength": 11,
+      "minLength": 11
     },
-    "payslip": {
-      "via": "employee",
-      "model": "payslip"
+    "Telefone": {
+      "type": "string",
+      "regex": "[0-9]"
     },
-    "register_hour": {
-      "via": "employee",
-      "model": "register-hours"
+    "apontamentos": {
+      "collection": "apontamento"
+    },
+    "enderecos": {
+      "via": "funcionarios",
+      "collection": "address"
     }
   }
 }

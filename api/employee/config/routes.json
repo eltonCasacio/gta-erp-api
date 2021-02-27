@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/employees/endereco",
+      "handler": "employee.endereco",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
