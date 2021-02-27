@@ -31,10 +31,9 @@
       "type": "string",
       "required": true
     },
-    "funcionarios": {
-      "collection": "employee",
-      "via": "enderecos",
-      "dominant": true
+    "funcionario": {
+      "model": "employee",
+      "via": "endereco"
     }
   }
 }

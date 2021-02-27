@@ -663,11 +663,8 @@
                   "type": "string"
                 }
               },
-              "enderecos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "endereco": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"

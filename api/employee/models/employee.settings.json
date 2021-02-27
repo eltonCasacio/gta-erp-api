@@ -60,9 +60,9 @@
     "apontamentos": {
       "collection": "apontamento"
     },
-    "enderecos": {
-      "via": "funcionarios",
-      "collection": "address"
+    "endereco": {
+      "via": "funcionario",
+      "model": "address"
     }
   }
 }

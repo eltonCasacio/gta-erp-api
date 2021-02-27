@@ -739,51 +739,45 @@
               }
             }
           },
-          "enderecos": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "Rua",
-                "UF"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Rua": {
-                  "type": "string"
-                },
-                "Numero": {
-                  "type": "string"
-                },
-                "Bairro": {
-                  "type": "string"
-                },
-                "CEP": {
-                  "type": "string"
-                },
-                "Cidade": {
-                  "type": "string"
-                },
-                "UF": {
-                  "type": "string"
-                },
-                "funcionarios": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
+          "endereco": {
+            "required": [
+              "id",
+              "Rua",
+              "UF"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "Rua": {
+                "type": "string"
+              },
+              "Numero": {
+                "type": "string"
+              },
+              "Bairro": {
+                "type": "string"
+              },
+              "CEP": {
+                "type": "string"
+              },
+              "Cidade": {
+                "type": "string"
+              },
+              "UF": {
+                "type": "string"
+              },
+              "funcionario": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
@@ -845,11 +839,8 @@
               "type": "string"
             }
           },
-          "enderecos": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "endereco": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
