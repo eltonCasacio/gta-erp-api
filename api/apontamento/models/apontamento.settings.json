@@ -23,8 +23,7 @@
       ]
     },
     "funcionario": {
-      "model": "employee",
-      "via": "apontamentos"
+      "model": "employee"
     }
   }
 }

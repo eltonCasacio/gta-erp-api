@@ -1295,12 +1295,6 @@
               "users_permissions_user": {
                 "type": "string"
               },
-              "apontamentos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "published_at": {
                 "type": "string"
               },
