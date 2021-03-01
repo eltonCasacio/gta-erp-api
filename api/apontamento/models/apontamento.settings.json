@@ -13,19 +13,16 @@
   "attributes": {
     "registerDateHour": {
       "type": "datetime",
-      "required": true,
-      "unique": false
+      "required": true
     },
     "tipo": {
       "type": "enumeration",
       "enum": [
         "ENTRADA",
         "SAIDA"
-      ],
-      "unique": true
+      ]
     },
     "funcionario": {
-      "unique": true,
       "model": "employee",
       "via": "apontamentos"
     }
