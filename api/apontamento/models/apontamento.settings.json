@@ -26,7 +26,8 @@
     },
     "funcionario": {
       "unique": true,
-      "model": "employee"
+      "model": "employee",
+      "via": "apontamentos"
     }
   }
 }

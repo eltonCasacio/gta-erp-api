@@ -704,6 +704,42 @@
               }
             }
           },
+          "apontamentos": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "registerDateHour"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "registerDateHour": {
+                  "type": "string"
+                },
+                "tipo": {
+                  "type": "string",
+                  "enum": [
+                    "ENTRADA",
+                    "SAIDA"
+                  ]
+                },
+                "funcionario": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -756,6 +792,12 @@
           },
           "users_permissions_user": {
             "type": "string"
+          },
+          "apontamentos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

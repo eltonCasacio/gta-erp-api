@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/01/2021 1:13:24 AM"
+    "x-generation-date": "03/01/2021 10:16:30 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4844,6 +4844,12 @@
               "users_permissions_user": {
                 "type": "string"
               },
+              "apontamentos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },
@@ -4963,6 +4969,12 @@
               },
               "users_permissions_user": {
                 "type": "string"
+              },
+              "apontamentos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -5131,6 +5143,42 @@
               }
             }
           },
+          "apontamentos": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "registerDateHour"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "registerDateHour": {
+                  "type": "string"
+                },
+                "tipo": {
+                  "type": "string",
+                  "enum": [
+                    "ENTRADA",
+                    "SAIDA"
+                  ]
+                },
+                "funcionario": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -5183,6 +5231,12 @@
           },
           "users_permissions_user": {
             "type": "string"
+          },
+          "apontamentos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -5339,6 +5393,12 @@
               },
               "users_permissions_user": {
                 "type": "string"
+              },
+              "apontamentos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -5706,6 +5766,12 @@
               },
               "users_permissions_user": {
                 "type": "string"
+              },
+              "apontamentos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"

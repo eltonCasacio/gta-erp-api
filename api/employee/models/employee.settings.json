@@ -60,6 +60,10 @@
     "users_permissions_user": {
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "apontamentos": {
+      "via": "funcionario",
+      "collection": "apontamento"
     }
   }
 }
