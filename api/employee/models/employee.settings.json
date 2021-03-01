@@ -24,14 +24,6 @@
       "type": "date",
       "required": true
     },
-    "funcoe": {
-      "model": "position",
-      "via": "funcionarios"
-    },
-    "holerites": {
-      "collection": "payslip",
-      "via": "funcionario"
-    },
     "RG": {
       "type": "string",
       "maxLength": 10,
@@ -57,17 +49,17 @@
       "type": "string",
       "regex": "[0-9]"
     },
-    "apontamentos": {
-      "collection": "apontamento"
-    },
-    "endereco": {
-      "model": "address",
-      "via": "funcionario"
-    },
     "email": {
       "type": "email",
       "required": true,
       "unique": true
+    },
+    "funcoe": {
+      "model": "position"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }

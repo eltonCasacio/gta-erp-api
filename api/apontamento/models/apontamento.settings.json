@@ -11,13 +11,22 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "entrada": {
-      "type": "time",
-      "required": false
+    "registerDateHour": {
+      "type": "datetime",
+      "required": true,
+      "unique": false
     },
-    "saida": {
-      "type": "time",
-      "required": false
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "ENTRADA",
+        "SAIDA"
+      ],
+      "unique": true
+    },
+    "funcionario": {
+      "unique": true,
+      "model": "employee"
     }
   }
 }

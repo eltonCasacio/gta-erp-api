@@ -516,17 +516,78 @@
     "schemas": {
       "Apontamento": {
         "required": [
-          "id"
+          "id",
+          "registerDateHour"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "entrada": {
-            "type": "string"
+          "registerDateHour": {
+            "type": "string",
+            "format": "date-time"
           },
-          "saida": {
-            "type": "string"
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "ENTRADA",
+              "SAIDA"
+            ]
+          },
+          "funcionario": {
+            "required": [
+              "id",
+              "Nome",
+              "Nascimento",
+              "Admissao",
+              "RG",
+              "CPF",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "Nome": {
+                "type": "string"
+              },
+              "Nascimento": {
+                "type": "string"
+              },
+              "Admissao": {
+                "type": "string"
+              },
+              "RG": {
+                "type": "string"
+              },
+              "CPF": {
+                "type": "string"
+              },
+              "Celular": {
+                "type": "string"
+              },
+              "Telefone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "funcoe": {
+                "type": "string"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -535,11 +596,22 @@
         }
       },
       "NewApontamento": {
+        "required": [
+          "registerDateHour"
+        ],
         "properties": {
-          "entrada": {
-            "type": "string"
+          "registerDateHour": {
+            "type": "string",
+            "format": "date-time"
           },
-          "saida": {
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "ENTRADA",
+              "SAIDA"
+            ]
+          },
+          "funcionario": {
             "type": "string"
           },
           "published_at": {

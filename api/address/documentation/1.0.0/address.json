@@ -565,15 +565,6 @@
               "Admissao": {
                 "type": "string"
               },
-              "funcoe": {
-                "type": "string"
-              },
-              "holerites": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "RG": {
                 "type": "string"
               },
@@ -586,16 +577,13 @@
               "Telefone": {
                 "type": "string"
               },
-              "apontamentos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "endereco": {
+              "email": {
                 "type": "string"
               },
-              "email": {
+              "funcoe": {
+                "type": "string"
+              },
+              "users_permissions_user": {
                 "type": "string"
               },
               "published_at": {

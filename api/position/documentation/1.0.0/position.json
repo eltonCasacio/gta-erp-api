@@ -529,76 +529,6 @@
           "description": {
             "type": "string"
           },
-          "funcionarios": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "Nome",
-                "Nascimento",
-                "Admissao",
-                "RG",
-                "CPF",
-                "email"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Nome": {
-                  "type": "string"
-                },
-                "Nascimento": {
-                  "type": "string"
-                },
-                "Admissao": {
-                  "type": "string"
-                },
-                "funcoe": {
-                  "type": "string"
-                },
-                "holerites": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "RG": {
-                  "type": "string"
-                },
-                "CPF": {
-                  "type": "string"
-                },
-                "Celular": {
-                  "type": "string"
-                },
-                "Telefone": {
-                  "type": "string"
-                },
-                "apontamentos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "endereco": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -615,12 +545,6 @@
           },
           "description": {
             "type": "string"
-          },
-          "funcionarios": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",

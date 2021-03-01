@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/27/2021 11:48:39 AM"
+    "x-generation-date": "03/01/2021 1:13:24 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4823,15 +4823,6 @@
               "Admissao": {
                 "type": "string"
               },
-              "funcoe": {
-                "type": "string"
-              },
-              "holerites": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "RG": {
                 "type": "string"
               },
@@ -4844,16 +4835,13 @@
               "Telefone": {
                 "type": "string"
               },
-              "apontamentos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "endereco": {
+              "email": {
                 "type": "string"
               },
-              "email": {
+              "funcoe": {
+                "type": "string"
+              },
+              "users_permissions_user": {
                 "type": "string"
               },
               "published_at": {
@@ -4914,17 +4902,78 @@
       },
       "Apontamento": {
         "required": [
-          "id"
+          "id",
+          "registerDateHour"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "entrada": {
-            "type": "string"
+          "registerDateHour": {
+            "type": "string",
+            "format": "date-time"
           },
-          "saida": {
-            "type": "string"
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "ENTRADA",
+              "SAIDA"
+            ]
+          },
+          "funcionario": {
+            "required": [
+              "id",
+              "Nome",
+              "Nascimento",
+              "Admissao",
+              "RG",
+              "CPF",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "Nome": {
+                "type": "string"
+              },
+              "Nascimento": {
+                "type": "string"
+              },
+              "Admissao": {
+                "type": "string"
+              },
+              "RG": {
+                "type": "string"
+              },
+              "CPF": {
+                "type": "string"
+              },
+              "Celular": {
+                "type": "string"
+              },
+              "Telefone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "funcoe": {
+                "type": "string"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -4933,11 +4982,22 @@
         }
       },
       "NewApontamento": {
+        "required": [
+          "registerDateHour"
+        ],
         "properties": {
-          "entrada": {
-            "type": "string"
+          "registerDateHour": {
+            "type": "string",
+            "format": "date-time"
           },
-          "saida": {
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "ENTRADA",
+              "SAIDA"
+            ]
+          },
+          "funcionario": {
             "type": "string"
           },
           "published_at": {
@@ -4977,91 +5037,6 @@
             "type": "string",
             "format": "date"
           },
-          "funcoe": {
-            "required": [
-              "id",
-              "code"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "code": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "funcionarios": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "holerites": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "startDate",
-                "endDate",
-                "paymentDate",
-                "holerite"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "paymentType": {
-                  "type": "string",
-                  "enum": [
-                    "SALARIO",
-                    "ADIANTAMENTO",
-                    "FERIAS",
-                    "DECIMO_TERCEIRO_SALARIO"
-                  ]
-                },
-                "startDate": {
-                  "type": "string"
-                },
-                "endDate": {
-                  "type": "string"
-                },
-                "paymentDate": {
-                  "type": "string"
-                },
-                "visualized": {
-                  "type": "boolean"
-                },
-                "holerite": {
-                  "type": "string"
-                },
-                "funcionario": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "RG": {
             "type": "string",
             "maxLength": 10
@@ -5079,63 +5054,22 @@
           "Telefone": {
             "type": "string"
           },
-          "apontamentos": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "entrada": {
-                  "type": "string"
-                },
-                "saida": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "email": {
+            "type": "string"
           },
-          "endereco": {
+          "funcoe": {
             "required": [
               "id",
-              "Rua",
-              "UF"
+              "code"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "Rua": {
+              "code": {
                 "type": "string"
               },
-              "Numero": {
-                "type": "string"
-              },
-              "Bairro": {
-                "type": "string"
-              },
-              "CEP": {
-                "type": "string"
-              },
-              "Cidade": {
-                "type": "string"
-              },
-              "UF": {
-                "type": "string"
-              },
-              "funcionario": {
+              "description": {
                 "type": "string"
               },
               "published_at": {
@@ -5149,8 +5083,53 @@
               }
             }
           },
-          "email": {
-            "type": "string"
+          "users_permissions_user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "funcionario": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -5179,15 +5158,6 @@
             "type": "string",
             "format": "date"
           },
-          "funcoe": {
-            "type": "string"
-          },
-          "holerites": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "RG": {
             "type": "string",
             "maxLength": 10
@@ -5205,16 +5175,13 @@
           "Telefone": {
             "type": "string"
           },
-          "apontamentos": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "endereco": {
+          "email": {
             "type": "string"
           },
-          "email": {
+          "funcoe": {
+            "type": "string"
+          },
+          "users_permissions_user": {
             "type": "string"
           },
           "published_at": {
@@ -5352,15 +5319,6 @@
               "Admissao": {
                 "type": "string"
               },
-              "funcoe": {
-                "type": "string"
-              },
-              "holerites": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "RG": {
                 "type": "string"
               },
@@ -5373,16 +5331,13 @@
               "Telefone": {
                 "type": "string"
               },
-              "apontamentos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "endereco": {
+              "email": {
                 "type": "string"
               },
-              "email": {
+              "funcoe": {
+                "type": "string"
+              },
+              "users_permissions_user": {
                 "type": "string"
               },
               "published_at": {
@@ -5464,76 +5419,6 @@
           "description": {
             "type": "string"
           },
-          "funcionarios": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "Nome",
-                "Nascimento",
-                "Admissao",
-                "RG",
-                "CPF",
-                "email"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Nome": {
-                  "type": "string"
-                },
-                "Nascimento": {
-                  "type": "string"
-                },
-                "Admissao": {
-                  "type": "string"
-                },
-                "funcoe": {
-                  "type": "string"
-                },
-                "holerites": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "RG": {
-                  "type": "string"
-                },
-                "CPF": {
-                  "type": "string"
-                },
-                "Celular": {
-                  "type": "string"
-                },
-                "Telefone": {
-                  "type": "string"
-                },
-                "apontamentos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "endereco": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -5550,12 +5435,6 @@
           },
           "description": {
             "type": "string"
-          },
-          "funcionarios": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",
@@ -5666,6 +5545,9 @@
                   "type": "boolean"
                 },
                 "role": {
+                  "type": "string"
+                },
+                "funcionario": {
                   "type": "string"
                 },
                 "created_by": {
@@ -5780,6 +5662,61 @@
                 "type": "string"
               }
             }
+          },
+          "funcionario": {
+            "required": [
+              "id",
+              "Nome",
+              "Nascimento",
+              "Admissao",
+              "RG",
+              "CPF",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "Nome": {
+                "type": "string"
+              },
+              "Nascimento": {
+                "type": "string"
+              },
+              "Admissao": {
+                "type": "string"
+              },
+              "RG": {
+                "type": "string"
+              },
+              "CPF": {
+                "type": "string"
+              },
+              "Celular": {
+                "type": "string"
+              },
+              "Telefone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "funcoe": {
+                "type": "string"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -5820,6 +5757,9 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "funcionario": {
             "type": "string"
           },
           "created_by": {

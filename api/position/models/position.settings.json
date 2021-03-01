@@ -18,10 +18,6 @@
     "description": {
       "type": "text",
       "required": false
-    },
-    "funcionarios": {
-      "via": "funcoe",
-      "collection": "employee"
     }
   }
 }

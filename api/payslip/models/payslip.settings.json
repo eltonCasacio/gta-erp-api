@@ -48,7 +48,6 @@
       "required": true
     },
     "funcionario": {
-      "via": "holerites",
       "model": "employee"
     }
   }

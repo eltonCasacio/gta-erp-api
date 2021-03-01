@@ -1250,6 +1250,61 @@
                 "type": "string"
               }
             }
+          },
+          "funcionario": {
+            "required": [
+              "id",
+              "Nome",
+              "Nascimento",
+              "Admissao",
+              "RG",
+              "CPF",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "Nome": {
+                "type": "string"
+              },
+              "Nascimento": {
+                "type": "string"
+              },
+              "Admissao": {
+                "type": "string"
+              },
+              "RG": {
+                "type": "string"
+              },
+              "CPF": {
+                "type": "string"
+              },
+              "Celular": {
+                "type": "string"
+              },
+              "Telefone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "funcoe": {
+                "type": "string"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -1290,6 +1345,9 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "funcionario": {
             "type": "string"
           },
           "created_by": {
