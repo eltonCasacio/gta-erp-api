@@ -11,10 +11,6 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "registerDateHour": {
-      "type": "datetime",
-      "required": true
-    },
     "tipo": {
       "type": "enumeration",
       "enum": [
@@ -24,6 +20,10 @@
     },
     "funcionario": {
       "model": "employee"
+    },
+    "registerDateHour": {
+      "type": "datetime",
+      "required": true
     }
   }
 }

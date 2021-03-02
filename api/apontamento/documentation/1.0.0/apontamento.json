@@ -523,10 +523,6 @@
           "id": {
             "type": "string"
           },
-          "registerDateHour": {
-            "type": "string",
-            "format": "date-time"
-          },
           "tipo": {
             "type": "string",
             "enum": [
@@ -589,6 +585,10 @@
               }
             }
           },
+          "registerDateHour": {
+            "type": "string",
+            "format": "date-time"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -600,10 +600,6 @@
           "registerDateHour"
         ],
         "properties": {
-          "registerDateHour": {
-            "type": "string",
-            "format": "date-time"
-          },
           "tipo": {
             "type": "string",
             "enum": [
@@ -613,6 +609,10 @@
           },
           "funcionario": {
             "type": "string"
+          },
+          "registerDateHour": {
+            "type": "string",
+            "format": "date-time"
           },
           "published_at": {
             "type": "string",
