@@ -517,7 +517,8 @@
       "Apontamento": {
         "required": [
           "id",
-          "registerDateHour"
+          "registerDate",
+          "registerHour"
         ],
         "properties": {
           "id": {
@@ -585,9 +586,12 @@
               }
             }
           },
-          "registerDateHour": {
+          "registerDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
+          },
+          "registerHour": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -597,7 +601,8 @@
       },
       "NewApontamento": {
         "required": [
-          "registerDateHour"
+          "registerDate",
+          "registerHour"
         ],
         "properties": {
           "tipo": {
@@ -610,9 +615,12 @@
           "funcionario": {
             "type": "string"
           },
-          "registerDateHour": {
+          "registerDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
+          },
+          "registerHour": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

@@ -21,8 +21,12 @@
     "funcionario": {
       "model": "employee"
     },
-    "registerDateHour": {
-      "type": "datetime",
+    "registerDate": {
+      "type": "date",
+      "required": true
+    },
+    "registerHour": {
+      "type": "time",
       "required": true
     }
   }
