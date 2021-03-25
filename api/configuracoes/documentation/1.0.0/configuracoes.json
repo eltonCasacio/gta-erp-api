@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/payslips": {
+    "/configuracoes": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the configuracoes's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve configuracoes document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Payslip"
+                    "$ref": "#/components/schemas/Configuracoes"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Payslip"
+          "Configuracoes"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new configuracoes record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve configuracoes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payslip"
+                  "$ref": "#/components/schemas/Configuracoes"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Payslip"
+          "Configuracoes"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPayslip"
+                "$ref": "#/components/schemas/NewConfiguracoes"
               }
             }
           }
         }
       }
     },
-    "/payslips/count": {
+    "/configuracoes/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of configuracoes documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve configuracoes document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Payslip"
+          "Configuracoes"
         ],
         "parameters": []
       }
     },
-    "/payslips/{id}": {
+    "/configuracoes/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one configuracoes record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve configuracoes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payslip"
+                  "$ref": "#/components/schemas/Configuracoes"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Payslip"
+          "Configuracoes"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single configuracoes record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve configuracoes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Payslip"
+                  "$ref": "#/components/schemas/Configuracoes"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Payslip"
+          "Configuracoes"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPayslip"
+                "$ref": "#/components/schemas/NewConfiguracoes"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single configuracoes record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single configuracoes based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Payslip"
+          "Configuracoes"
         ],
         "parameters": [
           {
@@ -514,163 +514,17 @@
   },
   "components": {
     "schemas": {
-      "Payslip": {
+      "Configuracoes": {
         "required": [
           "id",
-          "startDate",
-          "endDate",
-          "paymentDate",
-          "holerite"
+          "Celular"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "paymentType": {
-            "type": "string",
-            "enum": [
-              "SALARIO",
-              "ADIANTAMENTO",
-              "FERIAS",
-              "DECIMO_TERCEIRO_SALARIO"
-            ]
-          },
-          "startDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "endDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "paymentDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "holerite": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "funcionario": {
-            "required": [
-              "id",
-              "Nome",
-              "Nascimento",
-              "Admissao",
-              "RG",
-              "CPF",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "Nome": {
-                "type": "string"
-              },
-              "Nascimento": {
-                "type": "string"
-              },
-              "Admissao": {
-                "type": "string"
-              },
-              "RG": {
-                "type": "string"
-              },
-              "CPF": {
-                "type": "string"
-              },
-              "Celular": {
-                "type": "string"
-              },
-              "Telefone": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "funcoe": {
-                "type": "string"
-              },
-              "users_permissions_user": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "Celular": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -678,39 +532,12 @@
           }
         }
       },
-      "NewPayslip": {
+      "NewConfiguracoes": {
         "required": [
-          "startDate",
-          "endDate",
-          "paymentDate"
+          "Celular"
         ],
         "properties": {
-          "paymentType": {
-            "type": "string",
-            "enum": [
-              "SALARIO",
-              "ADIANTAMENTO",
-              "FERIAS",
-              "DECIMO_TERCEIRO_SALARIO"
-            ]
-          },
-          "startDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "endDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "paymentDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "visualized": {
-            "type": "boolean",
-            "default": false
-          },
-          "funcionario": {
+          "Celular": {
             "type": "string"
           },
           "published_at": {
@@ -729,7 +556,7 @@
   },
   "tags": [
     {
-      "name": "Payslip"
+      "name": "Configuracoes"
     }
   ]
 }

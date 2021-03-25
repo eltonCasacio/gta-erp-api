@@ -38,11 +38,11 @@
       "private": true
     },
     "holerite": {
-      "model": "file",
+      "collection": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
-        "files"
+        "files",
+        "images"
       ],
       "plugin": "upload",
       "required": true
