@@ -23,7 +23,7 @@ module.exports = {
   reset: async (ctx) => {
     console.log('BODY???', ctx.body)
     ctx.send({
-      message: 'ok'
+      message: ctx.body
     });
   },
 };
