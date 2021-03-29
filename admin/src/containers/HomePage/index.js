@@ -87,28 +87,26 @@ const HomePage = ({ history: { push } }) => {
                   {(msg) => (
                     <P>
                       Através desse sistema você é capaz de disponibilizar
-                      documentos aos seus funcionários.
-                      <br />
-                      Alem de gerenciar o apontamento de horas de cada um.
+                      documentos aos seus funcionários, alem de gerenciar o apontamento de horas de cada um.
                       <br />
                       <br />
-                      Mas pode ser feito muito mais!
+                      E pode ser feito muito mais!
                       <br />
-                      Pode gerenciar férias
+                      Gerenciar férias
                       <br />
                       Gerar relatórios
                       <br />
                       Criar diversos tipos de alerta e envios de mensagens para
                       seu celular ou email
                       <br />
-                      E outras diversas funcionalidades
+                      E outras diversas funcionalidades que facilitam seu dia a dia.
                       <br />
                       <br />
                       <b>Gostou da ideia?</b>
                       <br />
                       Entre em contato com a C3RInnovation e agende uma reunião
-                      sem compromisso, vamos trocar ideias e elaborar um sistema
-                      que agregue valor.
+                      sem compromisso, vamos trocar ideias e elaborar juntos um sistema
+                      que agregue valor para sua empresa.
                       <Smile />
                     </P>
                   )}
