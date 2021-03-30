@@ -1,5 +1,5 @@
 'use strict';
-
+const axios = require('axios')
 /**
  * password.js controller
  *
@@ -15,15 +15,30 @@ module.exports = {
    */
 // 
   index: async (ctx) => {
-    ctx.send({
-      message: 'ok'
-    });
+    ctx.send(ctx);
   },
 
   reset: async (ctx) => {
-    console.log('BODY???', ctx.body)
-    ctx.send({
-      message: ctx.body
-    });
+    const {user} = ctx.request.body
+    // let teste = await strapi.query('user', 'users-permissions').find({username: 'maycon'});
+    
+    
+    const values = { 
+      password: 'Strapi#3'
+    }
+    
+    const params = 3
+
+    
+      try {
+        let teste = await strapi.plugins['users-permissions'].services.user.edit(
+          params,
+          values
+        );
+      } catch (error) {
+        
+      }
+    
+    ctx.send({msg:'ok'});
   },
 };

@@ -7,7 +7,9 @@
     "icon": "plug",
     "description": "Description of password plugin."
   },
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
   "author": {
     "name": "A Strapi developer",
     "email": "",
