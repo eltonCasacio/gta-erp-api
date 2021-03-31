@@ -49,31 +49,31 @@ module.exports = {
   },
 
   reset: async (ctx) => {
-    const { username } = ctx.request.body;
-    const userFound = await strapi
-      .query("user", "users-permissions")
-      .find({ username: username });
+    // const { username } = ctx.request.body;
+    // const userFound = await strapi
+    //   .query("user", "users-permissions")
+    //   .find({ username: username });
 
-    if (userFound.length <= 0) {
-      ctx.send({ msg: "Usuário inválido!" });
-      return null;
-    }
+    // if (userFound.length <= 0) {
+    //   ctx.send({ msg: "Usuário inválido!" });
+    //   return null;
+    // }
 
-    const user = userFound[0];
-    const password = generatePassword();
-    const values = { password };
-    const params = user.id;
+    // const user = userFound[0];
+    // const password = generatePassword();
+    // const values = { password };
+    // const params = user.id;
 
-    try {
-      await strapi.plugins["users-permissions"].services.user.edit(
-        params,
-        values
-      );
+    // try {
+    //   await strapi.plugins["users-permissions"].services.user.edit(
+    //     params,
+    //     values
+    //   );
 
-      sendEmail(user, password);
-    } catch (error) {
-      ctx.send({ msg: "Houve um erro ao gerara nova senha", error });
-    }
+    //   sendEmail(user, password);
+    // } catch (error) {
+    //   ctx.send({ msg: "Houve um erro ao gerara nova senha", error });
+    // }
 
     ctx.send({ msg: "Uma nova senha foi gerada e enviada para seu e-mail" });
   },
