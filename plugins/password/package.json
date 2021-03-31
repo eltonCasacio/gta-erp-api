@@ -8,9 +8,7 @@
     "description": "Description of password plugin."
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "nodemailer": "^6.5.0",
-    "strapi-provider-email-sendmail": "^3.5.4"
+    "axios": "^0.21.1"
   },
   "author": {
     "name": "A Strapi developer",
