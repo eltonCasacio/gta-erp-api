@@ -2,6 +2,7 @@
 const axios = require("axios");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
+const {google} = require("googleapis");
 
 /**
  * password.js controller
@@ -16,30 +17,42 @@ const sendEmail = async (user, newPassword) => {
   const senderUser = "eltoncasassio@gmail.com";
   const pass = "xicaradecaffee";
 
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    auth: {
-      user: senderUser,
-      pass,
-    },
-    tls: {
-      rejectUnauthorized: false,
-    }
-  });
+  const CLIENTE_ID = '269212373602-94ocut2mq8qlkck24pme0jt5j6o9u5hf.apps.googleusercontent.com'
+  const CLIENT_SECRET = 'JN9zIuitHoS3ncvG6NS8R4qE'
+  const REDIRECT_URI = 'https://developers.google.com/oauthplayground'
+  const REFRESH_TOKEN = '1//049qCEU2PgYYmCgYIARAAGAQSNwF-L9Ir-j5yOSpJXrg5XjhQ2p_amUkwG5KGFo_71fTDy-H0vMfi9bpxQeltYkCVGEo2p1xaN1A'
 
+  const oAuth2Client = new google.auth.OAuth2(CLIENTE_ID, CLIENT_SECRET, REDIRECT_URI)
+  oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
 
-  transporter
-    .sendMail({
+  try {
+    const accessToken = await oAuth2Client.getAccessToken()
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        type: 'OAuth2',
+        user: senderUser,
+        clientId: CLIENTE_ID,
+        clientSecret: CLIENT_SECRET,
+        refreshToken: REFRESH_TOKEN,
+        accessToken: accessToken
+      }
+    });
+
+    const mailOptions = {
       from: senderUser,
       to: user.email,
       replyTo: user.email,
       subject: "Reset de senha GTA Serviços",
       text: `Senha nova: ${newPassword}`,
-    })
-    .then((info) => console.log("RETORNO DE SENDMAIL ", info))
-    .catch((error) => console.error(error));
+    }
+
+    const result = await transporter.sendMail(mailOptions)
+    return result
+  } catch (error) {
+    return error
+  }
 };
 
 module.exports = {
