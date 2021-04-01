@@ -1,9 +1,8 @@
 "use strict";
-const axios = require("axios");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 const {google} = require("googleapis");
-
+const envConfig = require('../envConfig.js')
 /**
  * password.js controller
  *
@@ -14,13 +13,15 @@ const generatePassword = () => {
 };
 
 const sendEmail = async (user, newPassword) => {
-  const senderUser = "eltoncasassio@gmail.com";
-  const pass = "xicaradecaffee";
 
-  const CLIENTE_ID = '269212373602-94ocut2mq8qlkck24pme0jt5j6o9u5hf.apps.googleusercontent.com'
-  const CLIENT_SECRET = 'JN9zIuitHoS3ncvG6NS8R4qE'
-  const REDIRECT_URI = 'https://developers.google.com/oauthplayground'
-  const REFRESH_TOKEN = '1//049qCEU2PgYYmCgYIARAAGAQSNwF-L9Ir-j5yOSpJXrg5XjhQ2p_amUkwG5KGFo_71fTDy-H0vMfi9bpxQeltYkCVGEo2p1xaN1A'
+  console.log()
+  const senderUser = envConfig.SENDERUSER;
+  const pass = envConfig.PASS;
+
+  const CLIENTE_ID = envConfig.CLIENTE_ID
+  const CLIENT_SECRET = envConfig.CLIENT_SECRET
+  const REDIRECT_URI = envConfig.REDIRECT_URI
+  const REFRESH_TOKEN = envConfig.REFRESH_TOKEN
 
   const oAuth2Client = new google.auth.OAuth2(CLIENTE_ID, CLIENT_SECRET, REDIRECT_URI)
   oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
